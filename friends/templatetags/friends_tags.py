@@ -61,6 +61,10 @@ class AddToFriendsNode(template.Node):
                                                     from_user=current_user,
                                                     to_user=target_user,
                                                     accepted=False).count())
+                ctx['invited_you'] = bool(FriendshipRequest.objects.filter(
+                                                    from_user=target_user,
+                                                    to_user=current_user,
+                                                    accepted=False).count())
             return template.loader.render_to_string(self.template_name,
                                                     ctx,
                                                     context)
