@@ -8,7 +8,10 @@ from django.contrib.auth.decorators import login_required
 from models import FriendshipRequest, Friendship
 from app_settings import REDIRECT_FALLBACK_TO_PROFILE
 
-
+notification = None
+if "notification" in settings.INSTALLED_APPS:
+    from notification import models as notification
+    
 def limit_to_others(f):
     def _f(request, username, *args, **kwargs):
         if request.user.username == username:
@@ -102,9 +105,12 @@ def friendship_request(request, username, redirect_to, other_user, **kwargs):
         return result
     request_message = request.REQUEST.get('message', u'')
     try:
-        FriendshipRequest.objects.create(from_user=request.user,
+        friend_request = FriendshipRequest.objects.create(from_user=request.user,
                                          to_user=other_user,
                                          message=request_message)
+        if notification:
+            notification.send([other_user], "friend_request",
+                                    {"friend_request": friend_request})
     except IntegrityError:
         transaction.rollback()
         message = ugettext(u'You already have an active friend ' \
@@ -126,9 +132,15 @@ def friendship_accept(request, username, redirect_to, other_user, **kwargs):
 
 
 def _friendship_accept(from_user, to_user, redirect_to):
-    get_object_or_404(FriendshipRequest,
+    friendship_request = get_object_or_404(FriendshipRequest,
                       from_user=from_user,
-                      to_user=to_user).accept()
+                      to_user=to_user)
+    friendship_request.accept()
+    
+    if notification:
+        notification.send([other_user], "friend_request_accepted",
+                                    {"friend_request": friendship_request})
+        
     message = ugettext(u'You are now friends with %(user)s.')
     to_user.message_set.create(message=message % {
                      'user': from_user.get_full_name() or from_user.username})
