@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from models import FriendshipRequest, Friendship
 from app_settings import REDIRECT_FALLBACK_TO_PROFILE
+from django.conf import settings
 
 notification = None
 if "notification" in settings.INSTALLED_APPS:
