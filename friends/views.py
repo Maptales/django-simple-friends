@@ -139,7 +139,7 @@ def _friendship_accept(from_user, to_user, redirect_to):
     friendship_request.accept()
     
     if notification:
-        notification.send([other_user], "friend_request_accepted",
+        notification.send([from_user], "friend_request_accepted",
                                     {"friend_request": friendship_request})
         
     message = ugettext(u'You are now friends with %(user)s.')
