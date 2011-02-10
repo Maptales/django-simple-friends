@@ -1,4 +1,5 @@
 import os
+import sys
 from distutils.core import setup
 from django.core.management.commands.compilemessages import compile_messages
 from friends import __version__, __maintainer__, __email__
