@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-simple-friends\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-13 09:49-0500\n"
+"POT-Creation-Date: 2011-03-22 11:20+0100\n"
 "PO-Revision-Date: 2009-10-13 18:00+0200\n"
 "Last-Translator: Atamert Ölçgen <muhuk@muhuk.com>\n"
 "Language-Team: muhuk <muhuk@muhuk.com>\n"
@@ -20,23 +20,42 @@ msgstr ""
 msgid "Accept selected friendship requests"
 msgstr "Seçilen arkadaşlık taleplerini kabul et"
 
-#: admin.py:22
+#: admin.py:21
 msgid "Decline selected friendship requests"
 msgstr "Seçilen arkadaşlık taleplerini reddet"
 
-#: admin.py:29
+#: admin.py:27
 msgid "Cancel selected friendship requests"
 msgstr "Seçilen arkadaşlık taleplerini iptal et"
 
-#: models.py:18
+#: management.py:9
+#, fuzzy
+msgid "Friendship requested"
+msgstr "arkadaşlık talebi"
+
+#: management.py:9
+msgid "Somebody requested your friendship."
+msgstr ""
+
+#: management.py:10
+#, fuzzy
+msgid "Friendship accepted"
+msgstr "arkadaşlık talebi"
+
+#: management.py:10
+#, fuzzy
+msgid "Somebody accepted your friendship request."
+msgstr "%(user)s sizin arkadaşlık talebinizi reddetti."
+
+#: models.py:17
 msgid "friendship request"
 msgstr "arkadaşlık talebi"
 
-#: models.py:19
+#: models.py:18
 msgid "friendship requests"
 msgstr "arkadaşlık talepleri"
 
-#: models.py:23
+#: models.py:22
 #, python-format
 msgid "%(from_user)s wants to be friends with %(to_user)s"
 msgstr "%(from_user)s,  %(to_user)s ile arkadaş olmak istiyor"
@@ -54,97 +73,96 @@ msgstr "arkadaşlıklar"
 msgid "%(user)s's friends"
 msgstr "%(user)s kullanıcısının arkadaşlıkları"
 
-#: models.py:77
+#: models.py:76
 msgid "Friends count"
 msgstr "Arkadaş sayısı"
 
-#: models.py:85
+#: models.py:82
 msgid "Summary of friends"
 msgstr "Arkadaşların özeti"
 
-#: models.py:93
+#: models.py:90
 msgid "user blocks"
 msgstr "engellemeler"
 
-#: models.py:96
+#: models.py:93
 #, python-format
 msgid "Users blocked by %(user)s"
 msgstr "%(user)s tarafından engellenenler"
 
-#: models.py:101
+#: models.py:97
 msgid "Blocks count"
 msgstr "Engelleme sayısı"
 
-#: models.py:109
+#: models.py:103
 msgid "Summary of blocks"
 msgstr "Engellemelerin özeti"
 
-#: views.py:17
+#: views.py:19
 msgid "You can't befriend yourself."
 msgstr "Kendi kendinizi arkadaş olarak ekleyemezsiniz."
 
-#: views.py:45
+#: views.py:47
 #, python-format
 msgid "You are already friends with %(user)s"
 msgstr "%(user)s ile zaten arkadaşsınız."
 
-#: views.py:105
+#: views.py:117
 #, python-format
 msgid "You already have an active friend invitation for %(user)s."
 msgstr "%(user)s için zaten bir arkadaşlık talebiniz var."
 
-#: views.py:108
+#: views.py:120
 #, python-format
 msgid "You have requested to be friends with %(user)s."
 msgstr "%(user)s ile arkadaş olmayı talep ettiniz."
 
-#: views.py:128
+#: views.py:145
 #, python-format
 msgid "You are now friends with %(user)s."
 msgstr "Artık %(user)s ile arkadaşsınız."
 
-#: views.py:145
+#: views.py:161
 #, python-format
 msgid "You declined friendship request of %(user)s."
 msgstr "%(user)s kullanıcısının arkadaşlık talebini reddettiniz."
 
-#: views.py:148
+#: views.py:164
 #, python-format
 msgid "%(user)s has declined your friendship request."
 msgstr "%(user)s sizin arkadaşlık talebinizi reddetti."
 
-#: views.py:163
+#: views.py:178
 #, python-format
 msgid "You cancelled your request to be friends with %(user)s."
 msgstr "%(user)s için arkadaşlık talebinizi iptal ettiniz."
 
-#: views.py:179
+#: views.py:194
 #, python-format
 msgid "You are no longer friends with %(user)s."
 msgstr "Artık %(user)s ile arkadaş değilsiniz."
 
-#: views.py:182
+#: views.py:197
 #, python-format
 msgid "%(user)s has removed you as a friend."
 msgstr "%(user)s sizi arkadaşlıktan çıkardı."
 
-#: views.py:197
+#: views.py:212
 #, python-format
 msgid "You have blocked %(user)s."
 msgstr "%(user)s kullanıcısını engellediniz."
 
-#: views.py:199
+#: views.py:214
 #, python-format
 msgid "%(user)s is already blocked."
 msgstr "%(user)s zaten engelleniyor."
 
-#: views.py:213
+#: views.py:228
 #, python-format
 msgid "%(user)s was not blocked."
 msgstr "%(user)s zaten engellenmiyordu."
 
-#: views.py:216
+#: views.py:231
 #, python-format
 msgid "You have unblocked %(user)s."
 msgstr "%(user)s için engellemeyi kaldırdınız."
-
