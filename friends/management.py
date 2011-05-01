@@ -6,8 +6,8 @@ try:
 
     def create_notice_types(app, created_models, verbosity, **kwargs):
         try:
-            notification.create_notice_type("friend_request", _("Friendship requested"), _("Somebody requested your friendship."), default=1)
-            notification.create_notice_type("friend_request_accepted", _("Friendship accepted"), _("Somebody accepted your friendship request."), default=1)
+            notification.create_notice_type("friend_request", _("Friendship requested"), _("Somebody requested your friendship."), default=2)
+            notification.create_notice_type("friend_request_accepted", _("Friendship accepted"), _("Somebody accepted your friendship request."), default=2)
         except:
             pass
 
